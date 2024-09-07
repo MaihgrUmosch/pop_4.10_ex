@@ -1,1 +1,1 @@
-from .life import glider, blinker, glider_gun, Game  # noqa
+from .life import glider, blinker, glider_gun, Game, Pattern # noqa
