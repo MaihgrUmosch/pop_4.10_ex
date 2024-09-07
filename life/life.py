@@ -73,8 +73,13 @@ class Game:
             pyplot.pause(0.0000005)
 
     def move(self):
-        """Need to determine what this does..."""
+        """
+        Move forward a timestep.
 
+        Count the neighbours of each cell and determine whether or not
+        the current cell should be updated according to the number of
+        neighbours.
+        """
         stencil = np.array([[1, 1, 1], [1, 0, 1], [1, 1, 1]])
         neighbour_count = convolve2d(self.board, stencil, mode='same')
 
@@ -82,7 +87,8 @@ class Game:
             for j in range(self.board.shape[1]):
                 self.board[i, j] = (
                     1 if (
-                    # Needs a why comment
+                        # Implement rules of the GoL, if 3 neightbours then 1
+                        # else 0.
                         neighbour_count[i, j] == 3
                         or (
                             neighbour_count[i, j] == 2
