@@ -1,4 +1,4 @@
-"""This is the "life" module within the "Chapter 4 Package"."""
+"""The "life" module within the "Chapter 4 Package"."""
 
 import numpy as np
 from matplotlib import pyplot
@@ -92,8 +92,7 @@ class Game:
                         neighbour_count[i, j] == 3
                         or (
                             neighbour_count[i, j] == 2
-                            and
-                            self.board[i, j]
+                            and self.board[i, j]
                         )
                     )
                     else 0
